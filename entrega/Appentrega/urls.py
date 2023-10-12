@@ -16,14 +16,19 @@ Including another URLconf
 """
 
 from django.urls import path
-from Appentrega.views import saludo, inicio, pag1, pag2, pag3, CursoFormulario
+from Appentrega import views
+from .views import (saludo, inicio, pag1, pag2, pag3, 
+                              cursoFormulario, buscarCurso)
+
 
 urlpatterns = [
-    path('inicio/', inicio),
-    path('saludo/',saludo),
-    path('pag1/', pag1, name="pag1"),
-    path('pag2/', pag2, name="pag2"),
-    path('pag3/', pag3, name="pag3"),
-    path('F/', CursoFormulario, name="Cursoformulario"),
+    path('inicio/', views.inicio, name="Inicio"),
+    path('saludo/', views.saludo, name="saludo"),
+    path('curso/', views.curso, name="curso"),
+    path('pag1/', views.pag1, name="pag1"),
+    path('pag2/', views.pag2, name="pag2"),
+    path('pag3/', views.pag3, name="pag3"),
+    path('F/', cursoFormulario, name="Cursoformulario"),
+    path('buscarCurso/', buscarCurso, name="BuscarCurso"),
    
 ]

@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>One Page Wonder - Start Bootstrap Template</title>
+        <title>Do not get impressed - This is just the beginning</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
@@ -25,11 +25,13 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="{% url 'pag1' %}">pag1</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'pag2' %}">pag2</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'pag3' %}">pag3</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'Cursesformulario' %}">Cursesformulario</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'pag1' %}">Estudiantes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'pag2' %}">Cursos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'pag3' %}">Profesores</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Cursoformulario' %}">Cargar Curso</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'BuscarCurso' %}">buscarCurso</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">Log In</a></li>
+                        <a class="btn btn-primary" href="#NADAAUN">INICIAR</a>
                     </ul>
                 </div>
             </div>
@@ -59,6 +61,15 @@
         {% endblock %}
         
         {% block section4 %}
+        {% endblock %}
+
+        {% block section5 %}
+        {% endblock %}
+
+        {% block section6 %}
+        {% endblock %}
+
+        {% block section7 %}
         {% endblock %}
 
         <footer class="py-5 bg-black">

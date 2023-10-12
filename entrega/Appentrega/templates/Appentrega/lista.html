@@ -1,0 +1,11 @@
+{% extends "Appentrega/inicio.html" %}
+{% load static %}
+
+{% block section1 %}
+
+{% for curso in cursos %}
+    <li> {{ curso.nombre }} </li>
+    <li> {{ curso.camada }} </li>
+{% endfor %}
+
+{% endblock %}

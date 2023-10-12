@@ -1,0 +1,12 @@
+{% extends "Appentrega/inicio.html" %}
+{% load static %}
+{% block section4 %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <p>Curso: <input type="text" name="curso"></p>
+    <p>Camada: <input type="text" name="camada"></p>
+
+    <input type="submit" value="Enviar">
+
+</form>
+{% endblock %}
