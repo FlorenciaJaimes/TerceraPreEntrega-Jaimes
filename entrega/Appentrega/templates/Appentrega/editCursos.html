@@ -1,0 +1,16 @@
+{% extends "Appentrega/inicio.html" %}
+{% load static %}
+
+{% block section4 %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <table>
+        {{ miFormulario.as_table }}
+    </table>
+   
+   
+    <input type="submit" value="Guardar">
+
+</form>
+{% endblock %}

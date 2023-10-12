@@ -6,14 +6,11 @@
 <ul>
     {% for curso in cursos %}
         <li>Curso: {{ curso.nombre }} / Camada: {{curso.camada}} 
-        <button>
+            <a href="{% url 'editCursos' curso.id %}">Editar</a>
             <a onclick="return confirm('¿Estás seguro de que deseas eliminar el curso?')" href="{% url 'DeleteCurso' curso.id %}">Eliminar</a>
-            <a href="{% url 'EditCurso' curso.id %}">Editar</a>
-            <a href="{% url 'EditCurso' curso.id %}">Ver</a>
-        </button>
+            <a href="{% url 'DetalleCurso' curso.id %}">Ver</a>
     {% endfor %}
-    <br>
-    <a href="{% url 'cursoFormulario' %}">Agregar otro curso</a>
-</ul>
+    
+    </ul>
 
 {% endblock %}

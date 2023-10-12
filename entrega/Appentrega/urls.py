@@ -18,7 +18,8 @@ Including another URLconf
 from django.urls import path
 from Appentrega import views
 from .views import (saludo, inicio, pag1, pag2, pag3, 
-                              cursoFormulario, buscarCurso)
+                              cursoFormulario, buscarCurso, read_cursos, edit_curso,
+                                delete_curso, detalle_curso)
 
 
 urlpatterns = [
@@ -30,5 +31,10 @@ urlpatterns = [
     path('pag3/', views.pag3, name="pag3"),
     path('F/', cursoFormulario, name="Cursoformulario"),
     path('buscarCurso/', buscarCurso, name="BuscarCurso"),
+    path('verCursos/', read_cursos, name="verCursos"),
+    path('editCursos/<int:curso_id>', edit_curso, name="editCursos"),    
+    path('deleteCurso/<int:curso_id>', delete_curso, name="DeleteCurso"),
+    path('detalleCurso/<int:curso_id>', detalle_curso, name="DetalleCurso")
+
    
 ]

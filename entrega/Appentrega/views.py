@@ -56,3 +56,48 @@ def buscarCurso(request):
 def mostrar(request):
 
     pass
+
+def read_cursos(request):
+
+    cursos = Curso.objects.all()  # trae todos los cursos
+
+    contexto = {"cursos": cursos}
+
+    return render(request, "Appentrega/readcurso.html", contexto)
+
+
+def edit_curso(request, curso_id):
+    if request.method == "POST":
+        # Aqui me llega la informacion del html
+        miFormulario = CursoFormulario(request.POST)
+
+        if miFormulario.is_valid():
+            informacion = miFormulario.cleaned_data
+
+            curso = Curso.objects.get(id=curso_id)
+            curso.nombre = informacion["curso"]
+            curso.camada = informacion["camada"]
+            curso.save()
+
+            return render(request, "Appentrega/inicio.html")
+    else:
+        curso = Curso.objects.get(id=curso_id)
+        miFormulario = CursoFormulario(
+            initial={"curso": curso.nombre, "camada": curso.camada})
+
+    return render(request, "Appentrega/editCursos.html", {"miFormulario": miFormulario})
+
+
+def delete_curso(request, curso_id):
+
+    curso = Curso.objects.get(id=int(curso_id))
+    curso.delete()
+
+    # vuelvo al menú
+    cursos = Curso.objects.all()  # trae todos los cursos
+    return render(request, "Appentrega/readcurso.html", {"cursos": cursos})
+
+def detalle_curso(request, curso_id):
+
+    curso = Curso.objects.get(id=int(curso_id))
+    return render(request, 'Appentrega/ver_curso.html', {'curso': curso})
